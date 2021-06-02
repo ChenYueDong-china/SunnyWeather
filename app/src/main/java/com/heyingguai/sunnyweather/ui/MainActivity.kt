@@ -1,7 +1,8 @@
-package com.heyingguai.sunnyweather
+package com.heyingguai.sunnyweather.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.heyingguai.sunnyweather.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -5,10 +5,18 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.heyingguai.sunnyweather.login.Repository
+import com.heyingguai.sunnyweather.login.dao.PlaceDao
 import com.heyingguai.sunnyweather.login.model.Place
 
 class PlaceViewModel : ViewModel() {
     private val searchLiveData = MutableLiveData<String>()
+    fun savePlace(place: Place) =
+        Repository.savePlace(place)
+
+
+    fun getSavedPlace() = Repository.getSavedPlace()
+    fun isPlaceSaved() = Repository.isPlaceSaved()
+
     fun searchPlaces(query: String) {
         searchLiveData.value = query
 
