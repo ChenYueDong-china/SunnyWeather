@@ -14,6 +14,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
 import com.heyingguai.sunnyweather.R
 import com.heyingguai.sunnyweather.login.model.Weather
 import com.heyingguai.sunnyweather.login.model.getSky
@@ -22,6 +24,7 @@ import kotlinx.android.synthetic.main.activity_weather.*
 import kotlinx.android.synthetic.main.forecast.*
 import kotlinx.android.synthetic.main.life_index.*
 import kotlinx.android.synthetic.main.now.*
+import kotlinx.android.synthetic.main.toolbar1.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -112,7 +115,13 @@ class WeatherActivity : AppCompatActivity() {
         currentSky.text = getSky(realtime.skycon).info
         val currentPM25Text = "空气指数 ${realtime.airQuality.aqi.chn.toInt()}"
         currentAQI.text = currentPM25Text
-        nowLayout.setBackgroundResource(getSky(realtime.skycon).bg)
+        bodyLayout.setBackgroundResource(getSky(realtime.skycon).bg)
+
+        nowLayout.addOnOffsetChangedListener(BaseOnOffsetChangedListener { _: AppBarLayout?, i: Int ->
+            swipeRefresh.isEnabled = i >= 0
+        } )
+        nowLayout.visibility=View.VISIBLE
+
         // 填充forecast.xml布局中的数据
         forecastLayout.removeAllViews()
         val days = daily.skycon.size
@@ -140,7 +149,9 @@ class WeatherActivity : AppCompatActivity() {
         dressingText.text = lifeIndex.dressing[0].desc
         ultravioletText.text = lifeIndex.ultraviolet[0].desc
         carWashingText.text = lifeIndex.carWashing[0].desc
+
         weatherLayout.visibility = View.VISIBLE
+
     }
 
     override fun onBackPressed() {

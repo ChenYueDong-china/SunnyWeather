@@ -1,84 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nowLayout"
     android:layout_width="match_parent"
-    android:layout_height="530dp"
+    android:layout_height="wrap_content"
+    android:visibility="invisible"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/titleLayout"
+    <com.google.android.material.appbar.CollapsingToolbarLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:fitsSystemWindows="true">
-
-        <Button
-            android:id="@+id/navBtn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="15dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_home" />
-
-        <TextView
-            android:id="@+id/placeName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
-            android:layout_gravity="center"
-            android:singleLine="true"
-            android:ellipsize="middle"
-            android:textColor="#fff"
-            android:textSize="22sp" />
-
-    </FrameLayout>
-
-    <LinearLayout
-        android:id="@+id/bodyLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/currentTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#fff"
-            android:textSize="70sp" />
-
+        android:layout_height="match_parent"
+        app:contentScrim="#1494CD"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+        <!--   app:scrimVisibleHeightTrigger="140dp"默认就是2被-->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp">
+            android:id="@+id/bodyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_collapseMode="parallax"
+            app:layout_collapseParallaxMultiplier="0.3">
 
             <TextView
-                android:id="@+id/currentSky"
+                android:id="@+id/currentTemp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:textColor="#fff"
-                android:textSize="18sp" />
+                android:textSize="70sp" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="13dp"
-                android:textColor="#fff"
-                android:textSize="18sp"
-                android:text="|" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp">
 
-            <TextView
-                android:id="@+id/currentAQI"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="13dp"
-                android:textColor="#fff"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/currentSky"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:text="|"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/currentAQI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+        <include layout="@layout/toolbar1" />
 
-</RelativeLayout>
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+</com.google.android.material.appbar.AppBarLayout>
