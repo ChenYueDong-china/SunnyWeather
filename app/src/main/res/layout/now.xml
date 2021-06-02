@@ -10,7 +10,7 @@
     <com.google.android.material.appbar.CollapsingToolbarLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:contentScrim="#1494CD"
+        app:contentScrim="#3878D5"
         app:layout_scrollFlags="scroll|exitUntilCollapsed">
         <!--   app:scrimVisibleHeightTrigger="140dp"默认就是2被-->
         <LinearLayout
