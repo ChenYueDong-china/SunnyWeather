@@ -5,13 +5,13 @@
 
 -------
 # 效果图
-##效果一
- ![sdfsd](./screenshot/one.jpg "效果一") 
-##效果二
+## 效果一
+![sdfsd](./screenshot/one.jpg "效果一") 
+## 效果二
 ![sdfsd](./screenshot/two.jpg "效果二")  
-##效果三
- ![sdfsd](./screenshot/three.jpg "效果三")  
-##效果四
- ![sdfsd](./screenshot/four.jpg "效果四")  
+## 效果三
+![sdfsd](./screenshot/three.jpg "效果三")  
+## 效果四
+![sdfsd](./screenshot/four.jpg "效果四")  
 
 
