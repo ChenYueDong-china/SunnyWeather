@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelLazy
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blankj.utilcode.util.BarUtils
 import com.heyingguai.sunnyweather.R
 import com.heyingguai.sunnyweather.ui.MainActivity
 import com.heyingguai.sunnyweather.ui.WeatherActivity
@@ -56,6 +57,7 @@ class PlaceFragment : Fragment() {
             activity?.finish()
             return
         }
+        BarUtils.addMarginTopEqualStatusBarHeight(actionBarLayout)
         val layoutManager = LinearLayoutManager(activity)
         recyclerView.layoutManager = layoutManager
         adapter = PlaceAdapter(this, viewModel.placeList)
