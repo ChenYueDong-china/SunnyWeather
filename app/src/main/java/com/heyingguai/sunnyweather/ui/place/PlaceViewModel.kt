@@ -1,5 +1,6 @@
 package com.heyingguai.sunnyweather.ui.place
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
@@ -18,6 +19,7 @@ class PlaceViewModel : ViewModel() {
     fun isPlaceSaved() = Repository.isPlaceSaved()
 
     fun searchPlaces(query: String) {
+        Log.i("TAG", "searchPlaces: "+query)
         searchLiveData.value = query
 
     }

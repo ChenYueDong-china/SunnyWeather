@@ -11,15 +11,16 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelLazy
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.heyingguai.sunnyweather.R
 import com.heyingguai.sunnyweather.ui.MainActivity
 import com.heyingguai.sunnyweather.ui.WeatherActivity
+import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_place.*
 
 class PlaceFragment : Fragment() {
@@ -78,7 +79,7 @@ class PlaceFragment : Fragment() {
 
         viewModel.placeLiveData.observe(viewLifecycleOwner, Observer { result ->
             val places = result.getOrNull()
-            if (places != null) {
+            if (places != null && searchPlaceEdit.text.isNotEmpty()) {
                 recyclerView.visibility = View.VISIBLE
                 bgImageView.visibility = View.GONE
                 Log.i("TAG", " places: " + places.size)
@@ -87,7 +88,8 @@ class PlaceFragment : Fragment() {
                 Log.i("TAG", " viewModel.placeList: " + viewModel.placeList.size)
                 adapter.notifyDataSetChanged()
             } else {
-                Toast.makeText(activity, "未能查询到任何地点", Toast.LENGTH_SHORT).show()
+                Toasty.info(activity!!, "未能查询到任何地点").show()
+
                 result.exceptionOrNull()?.printStackTrace()
             }
         })

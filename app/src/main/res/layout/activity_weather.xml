@@ -6,12 +6,7 @@
     android:layout_height="match_parent">
 
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/placeFragment"
-        android:name="com.heyingguai.sunnyweather.ui.place.PlaceFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="start" />
+
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefresh"
@@ -52,6 +47,13 @@
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/placeFragment"
+        android:name="com.heyingguai.sunnyweather.ui.place.PlaceFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:clickable="true"
+        android:focusable="true" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
