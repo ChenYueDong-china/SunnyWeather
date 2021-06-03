@@ -3,12 +3,13 @@
 
 -----
 ## 效果图
- ![sdfsd](./screenshot/one.jpg "效果图")
-**效果一**  
-![sdfsd](./screenshot/two.jpg "效果图")
-**效果二**
- ![sdfsd](./screenshot/three.jpg "效果图")
-**效果三**
- ![sdfsd](./screenshot/four.jpg "效果图")
-**效果四**
+ ![sdfsd](./screenshot/one.jpg "效果图") 
+<p align="center">效果一</p> 
+
+![sdfsd](./screenshot/two.jpg "效果图")  
+**效果二**  
+ ![sdfsd](./screenshot/three.jpg "效果图")  
+**效果三**  
+ ![sdfsd](./screenshot/four.jpg "效果图")  
+**效果四**  
 
