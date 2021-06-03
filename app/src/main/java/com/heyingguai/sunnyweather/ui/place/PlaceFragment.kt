@@ -61,7 +61,7 @@ class PlaceFragment : Fragment() {
         adapter = PlaceAdapter(this, viewModel.placeList)
         recyclerView.adapter = adapter
 
-        searchPlaceEdit.setOnEditorActionListener(TextView.OnEditorActionListener { v, actionId, event ->
+        searchPlaceEdit.setOnEditorActionListener(TextView.OnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_GO || actionId == EditorInfo.IME_ACTION_SEARCH) {
                 hideKeyboard(view!!)
             }
@@ -90,10 +90,10 @@ class PlaceFragment : Fragment() {
                 Log.i("TAG", " viewModel.placeList: " + viewModel.placeList.size)
                 adapter.notifyDataSetChanged()
             } else {
-
-                Toasty.info(activity!!, "未能查询到任何地点").show()
-
-                result.exceptionOrNull()?.printStackTrace()
+                if (searchPlaceEdit.text.isNotEmpty()) {
+                    Toasty.info(activity!!, "未能查询到任何地点").show()
+                    result.exceptionOrNull()?.printStackTrace()
+                }
             }
         })
     }
