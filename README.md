@@ -3,7 +3,7 @@
 
 -----
 ## 效果图
-!["asdas"](.screenshot/one.jpg "效果图")
-!["asdas"](.screenshot/two.jpg "效果图")
-!["asdas"](.screenshot/three.jpg "效果图")
-!["asdas"](.screenshot/four.jpg "效果图")
+!["asdas"](./screenshot/one.jpg "效果图")
+!["asdas"](./screenshot/two.jpg "效果图")
+!["asdas"](./screenshot/three.jpg "效果图")
+!["asdas"](./screenshot/four.jpg "效果图")
