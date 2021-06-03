@@ -21,6 +21,7 @@ import com.heyingguai.sunnyweather.login.model.getSky
 import com.heyingguai.sunnyweather.ui.place.WeatherViewModel
 import kotlinx.android.synthetic.main.activity_weather.*
 import kotlinx.android.synthetic.main.forecast.*
+import kotlinx.android.synthetic.main.fragment_place.*
 import kotlinx.android.synthetic.main.life_index.*
 import kotlinx.android.synthetic.main.now.*
 import kotlinx.android.synthetic.main.toolbar1.*
@@ -107,6 +108,7 @@ class WeatherActivity : AppCompatActivity() {
     }
 
     private fun showWeatherInfo(weather: Weather) {
+
         placeName.text = viewModel.placeName
         val realtime = weather.realTime
         val daily = weather.daily
@@ -117,7 +119,6 @@ class WeatherActivity : AppCompatActivity() {
         val currentPM25Text = "空气指数 ${realtime.airQuality.aqi.chn.toInt()}"
         currentAQI.text = currentPM25Text
         imageview.setImageResource(getSky(realtime.skycon).bg)
-
         nowLayout.addOnOffsetChangedListener(BaseOnOffsetChangedListener { _: AppBarLayout?, i: Int ->
             swipeRefresh.isEnabled = i >= 0
         })

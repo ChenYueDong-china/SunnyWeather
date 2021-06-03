@@ -5,7 +5,8 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_color">
+    android:background="@color/primary_color"
+    android:fitsSystemWindows="true">
 
     <ImageView
         android:id="@+id/bgImageView"
@@ -18,11 +19,10 @@
         app:srcCompat="@drawable/bg_place" />
 
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/actionBarLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_height="60dp"
         android:background="@color/primary_color"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +45,7 @@
             android:inputType="text"
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
-    </LinearLayout>
+    </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
