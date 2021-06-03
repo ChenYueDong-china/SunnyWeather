@@ -4,7 +4,6 @@
 > [![API](https://img.shields.io/badge/API-29%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=11) 
 
 -------
-# 效果图
 ## 效果一
 ![sdfsd](./screenshot/one.jpg "效果一") 
 ## 效果二
