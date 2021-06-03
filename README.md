@@ -3,7 +3,7 @@
 
 -----
 ## 效果图
-<center> ![sdfsd](./screenshot/one.jpg "效果图") </center>
+ ![sdfsd](./screenshot/one.jpg "效果图")
 <center> <font color=#00ff00 size=6>**效果一**</font></center>
 <center> ![sdfsd](./screenshot/two.jpg "效果图") </center>
 <center> <font color=#00ff00 size=6>**效果二**</font></center>
