@@ -1,7 +1,6 @@
 package com.heyingguai.sunnyweather.ui
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,10 +33,10 @@ class WeatherActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val decorView = window.decorView
-        decorView.systemUiVisibility =
-            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-        window.statusBarColor = Color.TRANSPARENT
+        /*    val decorView = window.decorView
+            decorView.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+            window.statusBarColor = Color.TRANSPARENT*/
         setContentView(R.layout.activity_weather)
 
         if (viewModel.locationLng.isEmpty()) {
@@ -64,20 +63,6 @@ class WeatherActivity : AppCompatActivity() {
         swipeRefresh.setOnRefreshListener {
             refreshWeather()
         }
-
-        placeName.setOnClickListener { drawerLayout.openDrawer(GravityCompat.START) }
-        navBtn.setOnClickListener {
-            drawerLayout.openDrawer(GravityCompat.START)
-        }
-
-        /*   val wm = this.windowManager //获取屏幕宽高
-
-           val width1 = wm.defaultDisplay.width
-           val para: ViewGroup.LayoutParams = three_two.layoutParams //获取drawerlayout的布局
-
-           para.width = width1 / 2 //修改宽度
-           three_two.layoutParams = para*/
-        //不能拖动
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
             override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
@@ -98,6 +83,20 @@ class WeatherActivity : AppCompatActivity() {
             override fun onDrawerStateChanged(newState: Int) {
             }
         })
+        placeName.setOnClickListener { drawerLayout.openDrawer(GravityCompat.START) }
+        navBtn.setOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
+
+        /*   val wm = this.windowManager //获取屏幕宽高
+
+           val width1 = wm.defaultDisplay.width
+           val para: ViewGroup.LayoutParams = three_two.layoutParams //获取drawerlayout的布局
+
+           para.width = width1 / 2 //修改宽度
+           three_two.layoutParams = para*/
+        //不能拖动
+
 
         viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat)
     }

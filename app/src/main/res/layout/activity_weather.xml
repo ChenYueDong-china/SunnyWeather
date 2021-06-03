@@ -5,6 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/placeFragment"
+        android:name="com.heyingguai.sunnyweather.ui.place.PlaceFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start" />
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefresh"
         android:layout_width="match_parent"
@@ -12,8 +20,7 @@
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <include layout="@layout/now" />
 
@@ -46,22 +53,5 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <FrameLayout
-        android:id="@+id/three_two"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/primary_color"
-        android:clickable="true"
-        android:focusable="true">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/placeFragment"
-            android:name="com.heyingguai.sunnyweather.ui.place.PlaceFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="25dp" />
-
-    </FrameLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
