@@ -64,6 +64,8 @@ class WeatherActivity : AppCompatActivity() {
         swipeRefresh.setOnRefreshListener {
             refreshWeather()
         }
+
+        placeName.setOnClickListener { drawerLayout.openDrawer(GravityCompat.START) }
         navBtn.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
         }
@@ -115,12 +117,12 @@ class WeatherActivity : AppCompatActivity() {
         currentSky.text = getSky(realtime.skycon).info
         val currentPM25Text = "空气指数 ${realtime.airQuality.aqi.chn.toInt()}"
         currentAQI.text = currentPM25Text
-        bodyLayout.setBackgroundResource(getSky(realtime.skycon).bg)
+        imageview.setImageResource(getSky(realtime.skycon).bg)
 
         nowLayout.addOnOffsetChangedListener(BaseOnOffsetChangedListener { _: AppBarLayout?, i: Int ->
             swipeRefresh.isEnabled = i >= 0
-        } )
-        nowLayout.visibility=View.VISIBLE
+        })
+        nowLayout.visibility = View.VISIBLE
 
         // 填充forecast.xml布局中的数据
         forecastLayout.removeAllViews()
