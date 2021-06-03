@@ -4,11 +4,11 @@
 -----
 ## 效果图
  ![sdfsd](./screenshot/one.jpg "效果图")
-<font color=#00ff00 size=6>**效果一**</font>
+**效果一**  
 ![sdfsd](./screenshot/two.jpg "效果图")
- <font color=#00ff00 size=6>**效果二**</font>
+**效果二**
  ![sdfsd](./screenshot/three.jpg "效果图")
- <font color=#00ff00 size=6>**效果三**</font>
+**效果三**
  ![sdfsd](./screenshot/four.jpg "效果图")
- <font color=#00ff00 size=6>**效果四**</font>
+**效果四**
 
