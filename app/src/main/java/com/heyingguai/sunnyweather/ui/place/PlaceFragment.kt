@@ -16,7 +16,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelLazy
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.snackbar.Snackbar
 import com.heyingguai.sunnyweather.R
 import com.heyingguai.sunnyweather.ui.MainActivity
 import com.heyingguai.sunnyweather.ui.WeatherActivity
@@ -38,6 +37,9 @@ class PlaceFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Toasty.Config.getInstance()
+            .allowQueue(false)
+            .apply()
         return inflater.inflate(R.layout.fragment_place, container, false)
     }
 
@@ -88,6 +90,7 @@ class PlaceFragment : Fragment() {
                 Log.i("TAG", " viewModel.placeList: " + viewModel.placeList.size)
                 adapter.notifyDataSetChanged()
             } else {
+
                 Toasty.info(activity!!, "未能查询到任何地点").show()
 
                 result.exceptionOrNull()?.printStackTrace()
