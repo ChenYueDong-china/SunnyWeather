@@ -4,8 +4,7 @@
 -----
 ## 效果图
  ![sdfsd](./screenshot/one.jpg "效果图") 
-<p align="center">效果一</p> 
-
+<p align="center"><font  color="green" size="6">效果一</font></p> 
 ![sdfsd](./screenshot/two.jpg "效果图")  
 **效果二**  
  ![sdfsd](./screenshot/three.jpg "效果图")  
